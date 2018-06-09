@@ -43,7 +43,7 @@ open class ChatInputBar: ReusableXibView {
     weak var presenter: ChatInputBarPresenter?
 
     public var shouldEnableSendButton = { (inputBar: ChatInputBar) -> Bool in
-        return !inputBar.textView.text.isEmpty
+        return !inputBar.textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 
     @IBOutlet weak var scrollView: HorizontalStackScrollView!
