@@ -35,7 +35,7 @@ extension CGFloat {
 
 extension BaseChatViewController {
 
-    public func isScrolledAtBottom() -> Bool {
+    @objc open func isScrolledAtBottom() -> Bool {
         guard self.collectionView.numberOfSections > 0 && self.collectionView.numberOfItems(inSection: 0) > 0 else { return true }
         let sectionIndex = self.collectionView.numberOfSections - 1
         let itemIndex = self.collectionView.numberOfItems(inSection: sectionIndex) - 1
